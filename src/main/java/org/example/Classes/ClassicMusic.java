@@ -1,10 +1,15 @@
 package org.example.Classes;
 
 import org.example.Interfaces.Music;
+import org.springframework.stereotype.Component;
 
-public class ClassicMusic implements Music {
+import java.util.ArrayList;
+import java.util.List;
+
+@Component public class ClassicMusic implements Music {
+    private List<String> classicMusicList = new ArrayList<>(List.of("classic1","classic2","classic3"));
     @Override
-    public String getMusic() {
-        return "Богемская рапсодия";
+    public List<String> getMusic() {
+        return classicMusicList;
     }
 }

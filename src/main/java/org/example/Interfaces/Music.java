@@ -1,5 +1,7 @@
 package org.example.Interfaces;
 
+import java.util.List;
+
 public interface Music {
-    String getMusic();
+    List<String> getMusic();
 }
