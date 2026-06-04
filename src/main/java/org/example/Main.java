@@ -3,7 +3,9 @@ package org.example;
 import org.example.Classes.Computer;
 import org.example.Classes.MusicPlayer;
 import org.example.Classes.RaggyMusic;
+import org.example.Classes.SpringConfig;
 import org.example.Enums.MusicGenre;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Random;
@@ -12,10 +14,12 @@ import java.util.Random;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         Computer computer = context.getBean("computer",Computer.class);
-        computer.Start(MusicGenre.CLASSIC);
-
+        computer.Start();
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer.getMusicPlayerName());
+        System.out.println(musicPlayer.getVolume());
         context.close();
 
     }

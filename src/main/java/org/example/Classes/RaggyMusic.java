@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+
 public class RaggyMusic implements Music {
     private List<String> raggyMusicList = new ArrayList<>(List.of("raggy1","raggy2","raggy3"));
     public void Init(){
