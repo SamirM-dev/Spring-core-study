@@ -15,11 +15,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) throws Exception {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        Computer computer = context.getBean("computer",Computer.class);
-        computer.Start();
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        System.out.println(musicPlayer.getMusicPlayerName());
-        System.out.println(musicPlayer.getVolume());
+
         context.close();
 
     }

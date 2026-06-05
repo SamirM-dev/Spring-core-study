@@ -24,7 +24,7 @@ public class MusicPlayer {
     }
 
     public String playMusic(){
-        music= musicList.get(random.nextInt(musicList.size()));
+        music=musicList.get(random.nextInt(musicList.size()));
         return music.getMusic().get(random.nextInt(music.getMusic().size()));
     }
 
