@@ -1,6 +1,9 @@
 package org.example;
 
 import org.example.Classes.Computer;
+import org.example.Classes.HomeworksFromAbstract.AppSettings;
+import org.example.Classes.HomeworksFromAbstract.ClassWithEnvironment;
+import org.example.Classes.HomeworksFromAbstract.ConfigurationClass;
 import org.example.Classes.MusicPlayer;
 import org.example.Classes.RaggyMusic;
 import org.example.Classes.SpringConfig;
@@ -14,8 +17,7 @@ import java.util.Random;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws Exception {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigurationClass.class);
         context.close();
 
     }

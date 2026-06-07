@@ -8,19 +8,27 @@ import org.springframework.stereotype.Component;
 @Component
 public class AppSettings {
     private String appName;
-    private int appVersion;
+    private String appVersion;
     private int appMaxUsers;
     private String dbUrl;
-    private String bdUsername;
-    public AppSettings(@Value("${app.name}") String appName,@Value("${app.version}") int appVersion,@Value("${app.max-users}") int appMaxUsers,@Value("${db.url}") String dbUrl,@Value("${db.username}") String bdUsername) {
+    private String dbUsername;
+    public AppSettings(@Value("${app.name}") String appName,@Value("${app.version:1.0.1}") String appVersion, @Value("${app.max-users}") int appMaxUsers,
+                       @Value("${db.url}") String dbUrl,@Value("${db.username}") String dbUsername) {
         this.appName = appName;
         this.appVersion = appVersion;
         this.appMaxUsers = appMaxUsers;
         this.dbUrl = dbUrl;
-        this.bdUsername = bdUsername;
+        this.dbUsername = dbUsername;
     }
     @PostConstruct
     public void printSettings(){
+        System.out.println("=== Конфигурация приложения ===");
+        System.out.println("Имя: " + appName);
+        System.out.println("Версия: " + appVersion);
+        System.out.println("Макс. пользователей: " + appMaxUsers);
+        System.out.println("БД URL: " + dbUrl);
+        System.out.println("БД пользователь: " + dbUsername);
+        System.out.println();
 
     }
 
@@ -33,11 +41,11 @@ public class AppSettings {
         this.appName = appName;
     }
 
-    public int getAppVersion() {
+    public String getAppVersion() {
         return appVersion;
     }
 
-    public void setAppVersion(int appVersion) {
+    public void setAppVersion(String appVersion) {
         this.appVersion = appVersion;
     }
 
@@ -58,11 +66,11 @@ public class AppSettings {
     }
 
     public String getBdUsername() {
-        return bdUsername;
+        return dbUsername;
     }
 
     public void setBdUsername(String bdUsername) {
-        this.bdUsername = bdUsername;
+        this.dbUsername = bdUsername;
     }
 
 }
