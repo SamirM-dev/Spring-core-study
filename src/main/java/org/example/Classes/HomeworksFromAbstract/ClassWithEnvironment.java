@@ -3,7 +3,7 @@ package org.example.Classes.HomeworksFromAbstract;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-@Component public class ClassWithEnvironment {
+public class ClassWithEnvironment {
     private final Environment environment;
 
     public ClassWithEnvironment(Environment environment) {

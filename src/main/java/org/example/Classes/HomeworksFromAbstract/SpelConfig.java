@@ -4,7 +4,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component public class SpelConfig {
+public class SpelConfig {
     @Value("#{appSettings.appMaxUsers*2}") private int doubleMaxCount;
     @Value("#{appSettings.appName.toUpperCase}") private String appNameUpperCase;
 
