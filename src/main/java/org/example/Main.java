@@ -10,6 +10,8 @@ import org.example.Classes.RaggyMusic;
 import org.example.Classes.SpringConfig;
 import org.example.Enums.MusicGenre;
 import org.example.Interfaces.MessageService;
+import org.example.service.TaskService;
+import org.example.service.UserServicee;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,7 +22,17 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) throws Exception {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigurationClass.class);
-        context.getBean("userService", UserService.class).userRegister("Samir");
+        TaskService taskService = context.getBean("taskService", TaskService.class);
+        UserServicee userServicee = context.getBean("userServicee", UserServicee.class);
+        taskService.createTask("Task #1");
+        System.out.println();
+        taskService.deleteTask(1);
+        System.out.println();
+        taskService.getAllTasks();
+        System.out.println();
+        userServicee.getAllUsers();
+        System.out.println();
+        taskService.deleteTask(-1);
 
     }
 }

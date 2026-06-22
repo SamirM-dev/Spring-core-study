@@ -5,8 +5,9 @@ import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
+@EnableAspectJAutoProxy
 @PropertySource("classpath:app.properties")
-@ComponentScan("org.example.Classes.HomeworksFromAbstract")
+@ComponentScan("org.example")
 public class ConfigurationClass {
     @Bean
     public static PropertySourcesPlaceholderConfigurer configurer() {
